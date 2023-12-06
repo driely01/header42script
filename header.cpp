@@ -6,7 +6,7 @@
 /*   By: del-yaag <del-yaag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 20:24:27 by del-yaag          #+#    #+#             */
-/*   Updated: 2023/12/04 22:48:32 by del-yaag         ###   ########.fr       */
+/*   Updated: 2023/12/06 18:52:46 by del-yaag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,12 +30,16 @@ int main( void ) {
 
 	DIR *dr;
 	struct dirent *en;
+	
+	size_t findhpp;
+	size_t findh;
 	size_t findcpp;
 	size_t findc;
 	size_t findBy;
 	size_t findCreated;
 	size_t findUpdated;
 	size_t findlogin;
+	
 	std::ifstream file;
 	std::string login;
 
@@ -52,7 +56,9 @@ int main( void ) {
 			std::string name = en->d_name;
 			findcpp = name.find( ".cpp" );
 			findc = name.find( ".c" );
-			if ( findcpp != std::string::npos || findc != std::string::npos ) {
+			findhpp = name.find( ".hpp" );
+			findh = name.find( ".h" );
+			if ( findcpp != std::string::npos || findc != std::string::npos || findhpp != std::string::npos || findh != std::string::npos ) {
 				
 				bool cheat = 1;
 				file.open( en->d_name );
@@ -76,7 +82,6 @@ int main( void ) {
 						if ( findlogin == std::string::npos ) {
 
 							cheat = 0;
-							// std::cout << "	" << buffer << std::endl;
 							std::cout << RED << "cheater login in " << name << RESET << std::endl;
 						} else {
 
