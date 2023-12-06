@@ -4,14 +4,18 @@ RESET   = "\033[0m"
 BLACK   = "\033[30m"
 RED     = "\033[31m"
 GREEN   = "\033[32m"
+BLUE	= "\033[94m"
 
-inputlogin = input( "Enter login: " )
-if not inputlogin:
+currentDirectory = os.getcwd()
+inputLogin = input( "Enter login: " )
+if not len(inputLogin):
 	exit(0)
-login = inputlogin.split(' ')
+login = inputLogin.split(' ')
+login = [ part.strip() for part in login if part.strip() ]
+loginOccurences = { loginName: 0 for loginName in login }
 
-def openFileAndCheckLogin( file_path, file_name ):
-	with open(file_path, 'r', encoding='utf-8', errors='ignore') as file:
+def openFileAndCheckLogin( filePath, fileName ):
+	with open(filePath, 'r', encoding='utf-8', errors='ignore') as file:
 		lines = file.readlines()
 		for line in lines:
 			if "#include" in line:
@@ -20,19 +24,27 @@ def openFileAndCheckLogin( file_path, file_name ):
 				flag = False
 				for loginName in login:
 					if loginName in line:
+						loginOccurences[loginName] += 1
 						flag = True
 						break
 				if flag:
-					print(f'{GREEN + loginName + " " + file_name} Ok { RESET }')
+					print(f'{GREEN + loginName + " " + fileName} Ok { RESET }')
 				else:
-					print(f'{RED + file_name} cheater { RESET }')
+					print(f'{RED + fileName} cheater { RESET }')
 
-def check_files_for_author(directory):
+def checkFilesForAutor(directory):
+	totalFiles = 0
 	for root, dirs, files in os.walk(directory):
-		for file_name in files:
-			if file_name.endswith(".cpp"):
-				file_path = os.path.join(root, file_name)
-				openFileAndCheckLogin( file_path, file_name )
+		for fileName in files:
+			if fileName.endswith((".cpp", ".hpp", ".c", ".h")):
+				filePath = os.path.join(root, fileName)
+				totalFiles += 1
+				openFileAndCheckLogin( filePath, fileName )
+	if totalFiles > 0:
+		print(f'____________________')
+		for loginName, occurences in loginOccurences.items():
+			percentage = ( ( occurences / totalFiles ) * 100 ) / 3
+			formattedPercentage = "{:.2f}".format( percentage)
+			print(f'{ BLUE + formattedPercentage }%	{ loginName + RESET }')
 				
-current_directory = os.getcwd()
-check_files_for_author(current_directory)
+checkFilesForAutor(currentDirectory)
