@@ -17,10 +17,12 @@ loginOccurences = { loginName: 0 for loginName in login }
 def openFileAndCheckLogin( filePath, fileName ):
 	with open(filePath, 'r', encoding='utf-8', errors='ignore') as file:
 		lines = file.readlines()
+		isHeader = False
 		for line in lines:
 			if "#include" in line:
 				break
 			if "By: " in line or "Created: " in line or "Updated: " in line:
+				isHeader = True
 				flag = False
 				for loginName in login:
 					if loginName in line:
@@ -31,6 +33,10 @@ def openFileAndCheckLogin( filePath, fileName ):
 					print(f'{GREEN + loginName + " " + fileName} Ok { RESET }')
 				else:
 					print(f'{RED + fileName} cheater { RESET }')
+		if not isHeader:
+			print(f"{ BLUE }missing header in { fileName }! { RESET }")
+
+
 
 def checkFilesForAutor(directory):
 	totalFiles = 0
