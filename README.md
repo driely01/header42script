@@ -21,7 +21,7 @@ this is a python script to check the norminette and the header of `42` if contai
 the script is checked the three By, Created and Updated.
 
 ### Example
-<img width="201" alt="Screen Shot 2023-12-10 at 9 31 27 PM" src="https://github.com/driely01/header42script/assets/41493879/a30f5a9a-28c4-4a5f-8375-4b6af152a5e5">
-<img width="201" alt="Screen Shot 2023-12-10 at 9 34 49 PM" src="https://github.com/driely01/header42script/assets/41493879/40563dcc-2139-415f-8d6c-69c429c8e361">
-<img width="201" alt="Screen Shot 2023-12-10 at 9 35 11 PM" src="https://github.com/driely01/header42script/assets/41493879/ff08d502-6fb7-4eb4-b804-a4b55bdcf8f3">
+<img width="300" alt="Screen Shot 2023-12-10 at 9 31 27 PM" src="https://github.com/driely01/header42script/assets/41493879/a30f5a9a-28c4-4a5f-8375-4b6af152a5e5">
+<img width="300" alt="Screen Shot 2023-12-10 at 9 34 49 PM" src="https://github.com/driely01/header42script/assets/41493879/40563dcc-2139-415f-8d6c-69c429c8e361">
+<img width="300" alt="Screen Shot 2023-12-10 at 9 35 11 PM" src="https://github.com/driely01/header42script/assets/41493879/ff08d502-6fb7-4eb4-b804-a4b55bdcf8f3">
 <img width="601" alt="Screen Shot 2023-12-10 at 9 30 27 PM" src="https://github.com/driely01/header42script/assets/41493879/f61f259a-a781-42df-a85b-3f2db70d9336">
