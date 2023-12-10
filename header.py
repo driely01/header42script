@@ -40,9 +40,9 @@ class colors:
 
 currentDirectory = os.getcwd()
 
-inputLogin = input( f"{ colors.bg.orange + colors.fg.black }Enter login:{ colors.reset } " )
-if not len( inputLogin ):
-	exit(0)
+inputLogin = input( f"{ colors.bold + colors.bg.orange + colors.fg.black }Enter login:{ colors.reset } " )
+if not len( inputLogin ) or inputLogin.isspace():
+	exit( 0 )
 
 # check norminette
 print( f'\n{ colors.bg.green + colors.fg.black }  -- Check Norminette --  { colors.reset }' )
