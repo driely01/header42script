@@ -3,7 +3,7 @@
 ### about this script
 this is a python script to check the norminette and the header of `42` if container the correct login for the author or not and display the result in stdout with `Ok` if the login is the one who enterd as input otherwise it display `KO` and finally gives the percentage of the login.
 
-the header is something like the following:
+### the header is something like the following:
 ```
 # **************************************************************************** #
 #                                                                              #
@@ -17,3 +17,5 @@ the header is something like the following:
 #                                                                              #
 # **************************************************************************** #
 ```
+
+the script is checked the three By, Created and Updated.
