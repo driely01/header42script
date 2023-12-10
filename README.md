@@ -17,8 +17,12 @@ this is a python script to check the norminette and the header of `42` if contai
 #                                                                              #
 # **************************************************************************** #
 ```
-
 the script is checked the three By, Created and Updated.
+
+### run the script
+```
+python3 header.py
+```
 
 ### Example
 <img width="300" alt="Screen Shot 2023-12-10 at 9 37 59 PM" src="https://github.com/driely01/header42script/assets/41493879/556980b9-dc88-4f31-a39e-b40562d4b8b5">
