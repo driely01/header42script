@@ -87,7 +87,7 @@ def openFileAndCheckLogin( filePath, newPath, fileName ):
 				else:
 					print( f'{ colors.fg.red + newPath } KO { colors.reset }' )
 		if not isHeader:
-			print( f"{ colors.fg.yellow + newPath }missing header in { fileName }! { colors.reset }" )
+			print( f"{ colors.fg.yellow + newPath } missing header in { fileName }! { colors.reset }" )
 
 # walk in the workin directory and its subdirectories and open all files and check them
 def checkFilesForAutor( directory ):
