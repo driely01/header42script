@@ -100,11 +100,20 @@ def checkFilesForAutor( directory ):
 				totalFiles += 1
 				openFileAndCheckLogin( filePath, newPath, fileName )
 	if totalFiles > 0:
+		total = 0
 		print( f'______________________________' )
 		for loginName, occurences in loginOccurences.items():
 			percentage = ( ( occurences / totalFiles ) * 100 ) / 3
 			formattedPercentage = "{:.2f}".format( percentage )
+			total += percentage # count the total of the percentage
 			print( f'{ colors.fg.yellow + formattedPercentage }%\t\t{ loginName + colors.reset }' )
+		print( f'______________________________' )
+		formattedTotal = "{:.2f}".format( total )
+		if total == 100:
+			print( f'{ colors.fg.green + formattedTotal }%\t\ttotal OK{ colors.reset } ' ) # 100%
+		elif total < 100:
+			print( f'{ colors.fg.red + formattedTotal }%\t\ttotal KO{ colors.reset }' ) # not a 100%
+			
 # ----------------------------------------- #
 
 # ------------------start------------------ #
